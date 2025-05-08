@@ -1,0 +1,185 @@
+/* ========================
+   Variables globales (asegúrate de que estén en tu :root o donde prefieras)
+   ======================== */
+   :root {
+    --nba-blue: #17408B;
+    --nba-red:  #C8102E;
+    --nba-dark: #121212;
+    --radius-lg: 0.75rem;
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.10);
+  }
+  
+  /* ========================
+     Tipografía y cuerpo
+     ======================== */
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* ========================
+     Navbar principal
+     ======================== */
+  .navbar {
+    line-height: 1.8; /* centra verticalmente el texto */
+  }
+  .navbar .nav-link {
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s;
+  }
+  .navbar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+  }
+  .navbar .btn,
+  .navbar .btn-entrar {
+    padding: 0.25rem 1rem;
+    border-radius: 4px;
+  }
+  
+  /* ========================
+     Carrusel de próximos partidos (home)
+     ======================== */
+  .upcoming-games {
+    position: relative;
+    -webkit-overflow-scrolling: touch; /* scroll suave en iOS */
+  }
+  .upcoming-games .card {
+    padding: 0.5rem 0.75rem;
+    transition: transform 0.2s;
+    border-radius: 12px;
+  }
+  .upcoming-games .card:hover {
+    transform: translateY(-4px);
+  }
+ 
+  
+  /* ========================
+     Hero principal
+     ======================== */
+  .card-img-top {
+    /* degradado fade-out para asegurar contraste del título */
+    mask-image: linear-gradient(to bottom, black 60%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
+  }
+  
+  /* ========================
+     Cards de noticias
+     ======================== */
+  .news-card .card-body {
+    position: relative;
+  }
+  .news-card .card-body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s, transform 0.3s;
+  }
+  .news-card:hover .card-body::before {
+    background: rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+    transform-origin: center;
+  }
+  
+  /* ========================
+     Tablas de standings
+     ======================== */
+  .stats-table {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  .stats-table th,
+  .stats-table td {
+    vertical-align: middle;
+  }
+  .stats-table tbody tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.02);
+  }
+  .card-header {
+    padding: 0.75rem 1rem;
+  }
+  
+  /* ========================
+     Tipografía y escala genérica
+     ======================== */
+  h2, h3, h5 {
+    letter-spacing: 0.5px;
+  }
+  .fs-4 {
+    font-size: 1.5rem !important;
+  }
+  .fs-6 {
+    font-size: 0.875rem !important;
+  }
+  
+  /* ========================
+     Responsive tweaks
+     ======================== */
+  @media (max-width: 576px) {
+    .upcoming-games .card {
+      width: 120px !important;
+    }
+  }
+  
+  /* ==================================================
+     Adicional: estilos originales para equipos.php y jugadores.php
+     ================================================== */
+  
+  /* Hover lift effect para cards */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Estilos página de equipos */
+  .card:hover .shadow-sm {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.10) !important;
+  }
+  
+  /* Página jugadores */
+  #jugadores-page .display-4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  #jugadores-page .lead {
+    font-weight: 300;
+    color: var(--nba-dark);
+  }
+  #jugadores-page .form-control,
+  #jugadores-page .form-select {
+    border-radius: var(--radius-lg);
+    border-color: var(--nba-blue);
+  }
+  #jugadores-page .form-control:focus,
+  #jugadores-page .form-select:focus {
+    box-shadow: 0 0 0 0.2rem rgba(23, 64, 139, 0.25);
+  }
+  #jugadores-page .btn {
+    font-weight: 600;
+  }
+  
+  /* Cartas de jugador */
+  .player-card .card {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+  }
+  .player-card img.rounded-circle {
+    border: 3px solid var(--nba-red);
+  }
+  
+  /* Alertas */
+  .alert-warning {
+    border-radius: var(--radius-lg);
+  }
+  
+  /* Ajuste espacial */
+  main.container.my-5 h1,
+  #jugadores-page .display-4 {
+    margin-bottom: 2rem;
+  }
+  
